@@ -1,0 +1,120 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{endnotes}
+\usepackage{amsmath}
+\usepackage{color}
+%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[hidelinks]{hyperref}
+%\usepackage{libertine} 
+%\usepackage{fourier}
+%\usepackage[utopia]{mathdesign}
+
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+\usepackage{footmisc}
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Sonnenstrom}
+\author{Jens und Birgit}
+\date{24. Dezember 2012} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+\noindent Frohe Weihnachten! Einst tapste eine Schildkroete durch die Sahara und murmelte vor sich hin "nee, nee, nee...", waehrend sie ihren Kopf langsam hin und her wiegte. "So viel Sand und keine Foermchen." Ausserdem gibt es in der Wueste vorerst keine Solarzellen, da das Desertec Projekt\endnote{\href{www.desertec.org}{\color{blue}{\underline{www.desertec.org}}}} sich als Fata Morgana zu entpuppen droht. Da wir nun lange auf Sonnenstrom aus der Ferne warten werden, lohnt es sich vielleicht Solarzellen auf dem Garagendach zu installieren?
+
+\section{Theorie}
+
+%\let\footnote\endnote
+
+\includegraphics[scale=0.6]{Germany.png}\\
+\textbf{Diagramm 1:} Jaehrliche Sonneneinstrahlung fuer Deutschland\symbolfootnote[2]{PVGIS © European Union, 2001-2012}\\
+
+\noindent Laut dieser Studie haben wir dahoam etwa 1350 $kWh/m^2$ pro Jahr. Bei einer Effizienz der Solarzellen von 75$\%$ gibt das etwa 1000 $kWh_e/m^2$. In ihrer Gesamtheit sieht die Kalkulation so aus: \\
+
+\begin{equation}
+T_{breakeven}= \frac{1000 kWh/kW_p *  (60\%* EUR/kWh} {1200 EUR/kW_p}  \approx 2.5 Jahre
+\end{equation}
+
+% 0.445 \cfrac{EUR}{kWh}{1200 \cfrac{EUR}{kW_p}}
+%$\frac{1000}{EUR}$ = 2.5 Jahre
+%\ $= 2.5 Jahre \\
+
+\noindent\textbf{Annahmen:}\\
+Flaeche: 60.0 $m^2$\\
+Kosten\symbolfootnote[3]{Panel inklusive Versand, Laderegler (\href{http://www.amazon.de/dp/B005I1999Y}{\color{blue}{\underline{Link}}})}: 1200 EUR/ $kW_p$\\
+Strompreis:  0.251 EUR/kWh\\
+Einspeiseverguetung: 0.195 EUR/kWh \\
+Zinsen: 0.00\%\\
+\section{Fazit}
+
+In erster Linie ist dieses Ergebnis eine Zahl mit relativ grossen "error bars". Ich hoffe ihr seid nun neugierig auf eine praeziesere Rechnung eures Solarberaters. Bis dahin koennt ihr schon mal mit eurem Solar Starter-Kit experimentieren. 
+\\\\
+\noindent oan zwoa
+
+\theendnotes
+
+\section{Appendix}
+\includegraphics[scale=0.5]{Amazon.png}
+\textbf{Diagramm 2:} Solar Panel auf \href{http://www.amazon.de/dp/B005I1999Y}{\color{blue}{\underline{Amazon}}}
+
+\includegraphics[scale=0.5]{AmazonBA.png}
+\textbf{Diagramm 3:} 12 V Blei-Akku, der sich durch die Solarpanels laden laesst und wohlmoeglich einer Jaguar Batterie im Sommer auf die Spruenge helfen kann. 
+
+\includegraphics[scale=0.75]{Europe.png}
+\textbf{Diagramm43:} Solar Irradiation fuer Europa$\dagger$
+
+\end{document}
